@@ -168,12 +168,24 @@ def draw_grid(win, rows, width):
 
 
 def draw(win, grid, rows, width):
-	pass
+    	win.fill(WHITE)
+
+    	for row in grid:
+		for spot in row:
+		    spot.draw(win)
+
+    	draw_grid(win, rows, width)
+    	pygame.display.update()
 
 
 def get_clicked_pos(pos, rows, width):
-	pass
+	gap = width // rows
+    	y, x = pos
 
+    	row = y // gap
+    	col = x // gap
+
+    return row, col
 
 def main(win, width):
 	ROWS = 50
